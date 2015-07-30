@@ -1,8 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">MyApp</string>
+    <string name="BTC_app_name">BTC</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="BloodGroup_prompt">Choose a Blood Group</string>
+    <string name="Homepage_writeup">Bangalore Trekking Club is a non-profit cost sharing and volunteering based group founded by trekkers, professionals from IT and non IT fields, those who love nature, doing unexpected activities. We organize outdoor events every weekend of the year.  Aim of this group is to help explore the nature and capture nostalgic moments and cherish each and every moment.</string>
+    <string name="Homepage_Title">Bangalore Trekking Club – Join, Live, Explore - Zara Hatke!!!</string>
+    <string-array name="BloodGroup_arrays">
+        <item>A+ve</item>
+        <item>B+ve</item>
+        <item>AB+ve</item>
+        <item>O+ve</item>
+        <item>A-ve</item>
+        <item>B-ve</item>
+        <item>AB-ve</item>
+        <item>O-ve</item>
+    </string-array>
+
+    <string name="title_activity_home">BTC HOME</string>
+    <string name="title_activity_submit">EXIT</string>
+    <string name="title_activity_register">Register</string>
 
 </resources>

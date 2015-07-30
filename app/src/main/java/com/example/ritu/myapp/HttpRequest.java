@@ -111,9 +111,6 @@ public class HttpRequest{
         } catch (Exception e) {
             Log.e("Your App Name Here", "HttpUtils: " + e);
         }
-
-        Log.d("Your App Name Here", "Returning value:" + ret);
-
         return ret;
     }
 

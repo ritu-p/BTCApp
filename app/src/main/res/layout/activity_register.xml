@@ -3,7 +3,10 @@
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".Register">
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".Register"
+    android:background="@drawable/compressed"
+    android:backgroundTint="@android:color/darker_gray"
+    android:backgroundTintMode="screen">
 
     <EditText
         android:layout_width="wrap_content"
@@ -11,15 +14,14 @@
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/editName"
-        android:layout_marginTop="32dp"
-        android:layout_alignParentRight="false"
-        android:layout_alignParentBottom="false"
-        android:layout_alignParentLeft="false"
-        android:layout_alignParentTop="false"
         android:layout_alignWithParentIfMissing="false"
-        android:layout_centerHorizontal="true"
         android:editable="true"
-        android:hint="Full Name" />
+        android:hint="Full Name"
+        android:layout_marginTop="49dp"
+        android:layout_alignLeft="@+id/editEmail"
+        android:layout_alignStart="@+id/editEmail"
+        android:layout_alignRight="@+id/editEmail"
+        android:layout_alignEnd="@+id/editEmail" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -27,11 +29,10 @@
         android:inputType="textEmailAddress"
         android:ems="10"
         android:id="@+id/editEmail"
-        android:layout_below="@+id/editName"
-        android:layout_marginTop="61dp"
-        android:layout_centerHorizontal="true"
         android:autoText="false"
-        android:hint="Email id" />
+        android:hint="Email id"
+        android:layout_below="@+id/editName"
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -39,45 +40,99 @@
         android:inputType="phone"
         android:ems="10"
         android:id="@+id/editMobNumber"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/editEmail"
-        android:layout_alignStart="@+id/editEmail"
         android:phoneNumber="true"
         android:contentDescription="Mobile Number"
-        android:hint="Mob Number" />
+        android:hint="Mob Number"
+        android:layout_below="@+id/editEmail"
+        android:layout_alignLeft="@+id/editEmail"
+        android:layout_alignStart="@+id/editEmail" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="date"
+        android:inputType="none"
+        android:textIsSelectable="true"
         android:ems="10"
         android:id="@+id/editDOB"
-        android:layout_marginTop="66dp"
         android:selectAllOnFocus="true"
         android:contentDescription="Date of Birth"
         android:layout_alignWithParentIfMissing="true"
+        android:hint="Date of Birth"
         android:layout_below="@+id/editMobNumber"
-        android:layout_alignLeft="@+id/editMobNumber"
-        android:layout_alignStart="@+id/editMobNumber"
-        android:hint="Date of Birth" />
+        android:layout_centerHorizontal="true" />
+
+
+    <Spinner
+        android:id="@+id/bloodgrpSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/BloodGroup_arrays"
+        android:prompt="@string/BloodGroup_prompt"
+        android:layout_below="@+id/rdnGRpGender"
+        android:layout_marginTop="31dp"
+        android:layout_alignRight="@+id/editDOB"
+        android:layout_alignEnd="@+id/editDOB"
+        android:layout_alignLeft="@+id/rdnGRpGender"
+        android:layout_alignStart="@+id/rdnGRpGender"
+        android:longClickable="false"
+        android:contentDescription="@string/BloodGroup_prompt" />
+
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rdnGRpGender"
+        android:layout_below="@+id/editDOB"
+        android:layout_alignLeft="@+id/editDOB"
+        android:layout_alignStart="@+id/editDOB"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Female"
+            android:id="@+id/rdbtnFemale" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Male"
+            android:id="@+id/rdbtnMale"
+ />
+
+    </RadioGroup>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="OK"
         android:id="@+id/btnOK"
-        android:layout_below="@+id/editDOB"
-        android:layout_alignLeft="@+id/editDOB"
-        android:layout_alignStart="@+id/editDOB"
-        android:layout_marginTop="42dp" />
+        android:layout_alignTop="@+id/btnBack"
+        android:layout_alignLeft="@+id/bloodgrpSpinner"
+        android:layout_alignStart="@+id/bloodgrpSpinner" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cancel"
-        android:id="@+id/btnCancel"
-        android:layout_alignTop="@+id/btnOK"
-        android:layout_alignRight="@+id/editDOB"
-        android:layout_alignEnd="@+id/editDOB" />
+        android:text="Back"
+        android:id="@+id/btnBack"
+        android:layout_below="@+id/bloodgrpSpinner"
+        android:layout_alignRight="@+id/bloodgrpSpinner"
+        android:layout_alignEnd="@+id/bloodgrpSpinner"
+        android:layout_marginTop="50dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Blood Group"
+        android:id="@+id/textView4"
+        android:layout_alignLeft="@+id/bloodgrpSpinner"
+        android:layout_alignStart="@+id/bloodgrpSpinner"
+        android:layout_below="@+id/rdnGRpGender"
+        android:layout_alignRight="@+id/bloodgrpSpinner"
+        android:layout_alignEnd="@+id/bloodgrpSpinner"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
 
 </RelativeLayout>
